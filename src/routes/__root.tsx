@@ -76,6 +76,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Plataforma educacional brasileira dedicada ao ensino da Língua Brasileira de Sinais." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "FabLibras — Aprenda Libras e transforme vidas" },
+      { name: "twitter:title", content: "FabLibras — Aprenda Libras e transforme vidas" },
+      { property: "og:description", content: "Plataforma educacional brasileira dedicada ao ensino da Língua Brasileira de Sinais." },
+      { name: "twitter:description", content: "Plataforma educacional brasileira dedicada ao ensino da Língua Brasileira de Sinais." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37ba56f8-9965-40b8-94b0-24c0233ebd4b/id-preview-f45e019b--29741528-1548-4be6-8f7b-3f00c02c1069.lovable.app-1779563380306.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37ba56f8-9965-40b8-94b0-24c0233ebd4b/id-preview-f45e019b--29741528-1548-4be6-8f7b-3f00c02c1069.lovable.app-1779563380306.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
