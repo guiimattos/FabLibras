@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import ingridImg from "@/assets/ingrid.jpeg";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -58,7 +59,14 @@ function SobrePage() {
             </p>
             <p className="mt-6 font-bold text-white">Comece sua jornada agora.</p>
           </div>
-          <div className="aspect-[4/5] w-full max-w-md justify-self-center rounded-2xl bg-gradient-to-br from-primary/30 to-brand-purple/30 shadow-2xl ring-1 ring-white/10" />
+          <div className="w-full max-w-md justify-self-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary/30 to-brand-purple/30 shadow-2xl ring-1 ring-white/10">
+            <img
+              src={ingridImg}
+              alt="Ilustração da Ingrid Vieira, intérprete de Libras da FabLibras"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 

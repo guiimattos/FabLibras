@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import comunicacaoInclusiva from "@/assets/comunicacao-inclusiva.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,16 +42,14 @@ function Index() {
         </div>
       </section>
 
-      {/* COMUNICAÇÃO banner */}
-      <section className="bg-[#2563eb] py-10">
-        <div className="overflow-hidden">
-          <div className="whitespace-nowrap text-center text-[clamp(3rem,12vw,11rem)] font-extrabold tracking-tight text-white/95" style={{ fontFamily: "var(--font-display)" }}>
-            COMUNICAÇÃO
-          </div>
-          <div className="mt-2 whitespace-nowrap text-center text-[clamp(1.5rem,5vw,4rem)] font-light tracking-[0.4em] text-white/80">
-            I N C L U S I V A
-          </div>
-        </div>
+      {/* COMUNICAÇÃO INCLUSIVA banner */}
+      <section className="bg-[#2563eb]">
+        <img
+          src={comunicacaoInclusiva}
+          alt="Comunicação Inclusiva"
+          className="mx-auto block h-auto w-full max-w-7xl"
+          loading="lazy"
+        />
       </section>
 
       {/* Curso card */}
