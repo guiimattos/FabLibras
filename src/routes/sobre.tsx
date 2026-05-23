@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import ingridImg from "@/assets/ingrid.jpeg";
+import ingridEquipeImg from "@/assets/equipe/ingrid.jpg";
+import fernandoImg from "@/assets/equipe/fernando.jpg";
+import guilhermeImg from "@/assets/equipe/guilherme.jpg";
+import lauraImg from "@/assets/equipe/laura.jpg";
+import liviaImg from "@/assets/equipe/livia.jpg";
+import pedroHenriqueImg from "@/assets/equipe/pedro-henrique.jpg";
+import pedroLuizImg from "@/assets/equipe/pedro-luiz.jpg";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -22,20 +29,24 @@ const valores = [
 ];
 
 const equipe = [
-  { nome: "Ingrid Vieira", papel: "Intérprete de Libras" },
-  { nome: "Fernando Cunha", papel: "Desenvolvedor FrontEnd" },
-  { nome: "Guilherme Mattos", papel: "UX/UI Designer" },
-  { nome: "Laura Cosmos", papel: "Planejamento das gravações" },
-  { nome: "Lívia Suniga", papel: "Gestora de Projetos" },
-  { nome: "Pedro Henrique", papel: "Suporte Geral" },
-  { nome: "Pedro Luiz", papel: "Desenvolvedor FrontEnd" },
+  { nome: "Ingrid Vieira", papel: "Intérprete de Libras", foto: ingridEquipeImg },
+  { nome: "Fernando Cunha", papel: "Desenvolvedor FrontEnd", foto: fernandoImg },
+  { nome: "Guilherme Mattos", papel: "UX/UI Designer", foto: guilhermeImg },
+  { nome: "Laura Cosmos", papel: "Planejamento das gravações", foto: lauraImg },
+  { nome: "Lívia Suniga", papel: "Gestora de Projetos", foto: liviaImg },
+  { nome: "Pedro Henrique", papel: "Suporte Geral", foto: pedroHenriqueImg },
+  { nome: "Pedro Luiz", papel: "Desenvolvedor FrontEnd", foto: pedroLuizImg },
 ];
 
-function Avatar({ nome }: { nome: string }) {
-  const initials = nome.split(" ").map((n) => n[0]).slice(0, 2).join("");
+function Avatar({ nome, foto }: { nome: string; foto: string }) {
   return (
-    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary to-brand-purple text-2xl font-bold text-white">
-      {initials}
+    <div className="h-24 w-24 overflow-hidden rounded-full bg-gradient-to-br from-primary to-brand-purple shadow-lg ring-2 ring-white/10">
+      <img
+        src={foto}
+        alt={`Foto de ${nome}`}
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
     </div>
   );
 }
@@ -130,7 +141,7 @@ function SobrePage() {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {equipe.map((p) => (
               <div key={p.nome} className="flex flex-col items-center text-center">
-                <Avatar nome={p.nome} />
+                <Avatar nome={p.nome} foto={p.foto} />
                 <p className="mt-4 font-bold text-white">{p.nome}</p>
                 <p className="text-sm text-muted-foreground">{p.papel}</p>
               </div>
