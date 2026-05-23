@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as ProjetoRouteImport } from './routes/projeto'
+import { Route as CursoAvancadoRouteImport } from './routes/curso-avancado'
+import { Route as CursoRouteImport } from './routes/curso'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetoRoute = ProjetoRouteImport.update({
+  id: '/projeto',
+  path: '/projeto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CursoAvancadoRoute = CursoAvancadoRouteImport.update({
+  id: '/curso-avancado',
+  path: '/curso-avancado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CursoRoute = CursoRouteImport.update({
+  id: '/curso',
+  path: '/curso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/curso': typeof CursoRoute
+  '/curso-avancado': typeof CursoAvancadoRoute
+  '/projeto': typeof ProjetoRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/curso': typeof CursoRoute
+  '/curso-avancado': typeof CursoAvancadoRoute
+  '/projeto': typeof ProjetoRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/curso': typeof CursoRoute
+  '/curso-avancado': typeof CursoAvancadoRoute
+  '/projeto': typeof ProjetoRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/curso' | '/curso-avancado' | '/projeto' | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/curso' | '/curso-avancado' | '/projeto' | '/sobre'
+  id: '__root__' | '/' | '/curso' | '/curso-avancado' | '/projeto' | '/sobre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CursoRoute: typeof CursoRoute
+  CursoAvancadoRoute: typeof CursoAvancadoRoute
+  ProjetoRoute: typeof ProjetoRoute
+  SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projeto': {
+      id: '/projeto'
+      path: '/projeto'
+      fullPath: '/projeto'
+      preLoaderRoute: typeof ProjetoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/curso-avancado': {
+      id: '/curso-avancado'
+      path: '/curso-avancado'
+      fullPath: '/curso-avancado'
+      preLoaderRoute: typeof CursoAvancadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/curso': {
+      id: '/curso'
+      path: '/curso'
+      fullPath: '/curso'
+      preLoaderRoute: typeof CursoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +121,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CursoRoute: CursoRoute,
+  CursoAvancadoRoute: CursoAvancadoRoute,
+  ProjetoRoute: ProjetoRoute,
+  SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
