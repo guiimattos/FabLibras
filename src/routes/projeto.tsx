@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import qrAjuda from "@/assets/qr-ajuda.jpeg";
 
 export const Route = createFileRoute("/projeto")({
   head: () => ({
