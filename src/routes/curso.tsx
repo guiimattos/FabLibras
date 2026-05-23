@@ -71,14 +71,6 @@ function CursoPage() {
                     />
                   </div>
                 )}
-                <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
-                  {m.aulas.map((aula, i) => (
-                    <li key={aula} className="flex items-center gap-3 text-muted-foreground">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/20 text-xs text-primary">▶</span>
-                      Aula {i + 1} - {aula}
-                    </li>
-                  ))}
-                </ul>
               </details>
             ))}
           </div>
