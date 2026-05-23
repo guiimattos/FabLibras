@@ -80,8 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "FabLibras — Aprenda Libras e transforme vidas" },
       { property: "og:description", content: "Plataforma educacional brasileira dedicada ao ensino da Língua Brasileira de Sinais." },
       { name: "twitter:description", content: "Plataforma educacional brasileira dedicada ao ensino da Língua Brasileira de Sinais." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37ba56f8-9965-40b8-94b0-24c0233ebd4b/id-preview-f45e019b--29741528-1548-4be6-8f7b-3f00c02c1069.lovable.app-1779563380306.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37ba56f8-9965-40b8-94b0-24c0233ebd4b/id-preview-f45e019b--29741528-1548-4be6-8f7b-3f00c02c1069.lovable.app-1779563380306.png" },
+      { property: "og:url", content: "https://fablibras.com/" },
+      { property: "og:image", content: "https://fablibras.com/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: "https://fablibras.com/og-image.jpg" },
     ],
     links: [
       { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
