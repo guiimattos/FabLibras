@@ -53,7 +53,7 @@ function CursoAvancadoPage() {
       <section className="section-dark">
         <div className="mx-auto max-w-5xl space-y-6 px-6 py-20">
           {cursos.map((c) => (
-            <div key={c.titulo} className="grid gap-6 rounded-2xl border border-white/10 bg-card p-6 md:grid-cols-[260px,1fr] md:p-8">
+            <div key={c.titulo} className="grid gap-6 rounded-2xl border border-white/10 bg-card p-6 md:grid-cols-[260px_1fr] md:p-8">
               <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-gradient-to-br from-primary/30 to-brand-purple/30 p-6 md:aspect-auto">
                 <div className="text-center">
                   <div className="text-5xl">✋</div>
