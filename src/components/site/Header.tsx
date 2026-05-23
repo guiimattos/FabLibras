@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/fablibras-logo.jpeg";
+import logo from "@/assets/fablibras-logo.png";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
