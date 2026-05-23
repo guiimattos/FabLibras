@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/fablibras-logo-v2.png";
+import logo from "@/assets/fablibras-logo-original.png";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
@@ -22,7 +22,7 @@ export function Header() {
           <img
             src={logo}
             alt="FabLibras"
-            className="h-14 w-auto sm:h-16"
+            className="h-16 w-auto sm:h-20"
           />
         </Link>
 
