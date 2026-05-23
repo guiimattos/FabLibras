@@ -13,17 +13,19 @@ export const Route = createFileRoute("/curso")({
   component: CursoPage,
 });
 
-const modulos = [
+type Modulo = { icon: string; titulo: string; aulas: string[]; video?: string };
+
+const modulos: Modulo[] = [
   { icon: "📚", titulo: "Módulo 1 — Introdução à Libras", aulas: ["O que é Libras?", "História da Libras", "Alfabeto Manual", "Números em Libras", "Cumprimentos Básicos"] },
-  { icon: "😊", titulo: "Módulo 2 — Expressões Faciais", aulas: ["Expressões de Emoções", "Expressões Interrogativas", "Expressões Negativas", "Expressões de Intensidade", "Prática de Expressões"] },
-  { icon: "🏠", titulo: "Módulo 3 — Vocabulário Cotidiano", aulas: ["Objetos do Lar", "Alimentos e Bebidas", "Roupas e Acessórios", "Meios de Transporte", "Tecnologia e Comunicação"] },
-  { icon: "👨‍👩‍👧", titulo: "Módulo 4 — Família e Pessoas", aulas: ["Membros da Família", "Profissões", "Características Físicas", "Relações Pessoais", "Pronomes"] },
-  { icon: "🎨", titulo: "Módulo 5 — Cores e Adjetivos", aulas: ["Cores Básicas", "Tamanhos e Formas", "Adjetivos Positivos", "Adjetivos Negativos", "Comparações"] },
-  { icon: "🍽️", titulo: "Módulo 6 — Alimentação", aulas: ["Frutas e Verduras", "Refeições do Dia", "Restaurante e Pedidos", "Sabores e Texturas", "Receitas Simples"] },
-  { icon: "📍", titulo: "Módulo 7 — Lugares e Direções", aulas: ["Lugares da Cidade", "Pontos de Referência", "Como Pedir Direções", "Preposições de Lugar", "Mapa e Localização"] },
+  { icon: "😊", titulo: "Módulo 2 — Expressões Faciais", aulas: ["Expressões de Emoções", "Expressões Interrogativas", "Expressões Negativas", "Expressões de Intensidade", "Prática de Expressões"], video: "bmb7e6QNEdk" },
+  { icon: "🏠", titulo: "Módulo 3 — Vocabulário Cotidiano", aulas: ["Objetos do Lar", "Alimentos e Bebidas", "Roupas e Acessórios", "Meios de Transporte", "Tecnologia e Comunicação"], video: "6Q2T980Nd_g" },
+  { icon: "👨‍👩‍👧", titulo: "Módulo 4 — Família e Pessoas", aulas: ["Membros da Família", "Profissões", "Características Físicas", "Relações Pessoais", "Pronomes"], video: "E6dn0gKfUuY" },
+  { icon: "🎨", titulo: "Módulo 5 — Cores e Adjetivos", aulas: ["Cores Básicas", "Tamanhos e Formas", "Adjetivos Positivos", "Adjetivos Negativos", "Comparações"], video: "3VYNzSV9y0M" },
+  { icon: "🍽️", titulo: "Módulo 6 — Alimentação", aulas: ["Frutas e Verduras", "Refeições do Dia", "Restaurante e Pedidos", "Sabores e Texturas", "Receitas Simples"], video: "i7_64pjB8Uk" },
+  { icon: "📍", titulo: "Módulo 7 — Lugares e Direções", aulas: ["Lugares da Cidade", "Pontos de Referência", "Como Pedir Direções", "Preposições de Lugar", "Mapa e Localização"], video: "S47gmcNm9gA" },
   { icon: "⏰", titulo: "Módulo 8 — Tempo e Datas", aulas: ["Dias da Semana", "Meses do Ano", "Horas e Minutos", "Estações do Ano", "Eventos e Datas Comemorativas"] },
-  { icon: "🏃", titulo: "Módulo 9 — Verbos e Ações", aulas: ["Verbos do Cotidiano", "Verbos de Movimento", "Verbos de Comunicação", "Verbos de Sentimento", "Frases com Verbos"] },
-  { icon: "💬", titulo: "Módulo 10 — Conversação Básica", aulas: ["Diálogos do Dia a Dia", "Situações de Emergência", "No Médico e Farmácia", "Escola e Trabalho", "Revisão Geral e Certificado"] },
+  { icon: "🏃", titulo: "Módulo 9 — Verbos e Ações", aulas: ["Verbos do Cotidiano", "Verbos de Movimento", "Verbos de Comunicação", "Verbos de Sentimento", "Frases com Verbos"], video: "uPkvr-euE9M" },
+  { icon: "💬", titulo: "Módulo 10 — Conversação Básica", aulas: ["Diálogos do Dia a Dia", "Situações de Emergência", "No Médico e Farmácia", "Escola e Trabalho", "Revisão Geral e Certificado"], video: "jE9WcxbY8d0" },
 ];
 
 function CursoPage() {
@@ -57,6 +59,18 @@ function CursoPage() {
                   <span>{m.icon} {m.titulo}</span>
                   <span className="text-muted-foreground transition-transform group-open:rotate-180">▾</span>
                 </summary>
+                {m.video && (
+                  <div className="mt-5 aspect-video w-full overflow-hidden rounded-lg border border-white/10 bg-black">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${m.video}`}
+                      title={`Vídeo do ${m.titulo}`}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="h-full w-full"
+                    />
+                  </div>
+                )}
                 <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
                   {m.aulas.map((aula, i) => (
                     <li key={aula} className="flex items-center gap-3 text-muted-foreground">
