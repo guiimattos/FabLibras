@@ -102,24 +102,33 @@
   .section-dark { background: var(--color-background); }
 }
 
-/* Light theme overrides — activated when <html> has class "light" */
+/* Light theme — soft lavender/cream palette that complements the purple brand */
 .light {
-  --background: oklch(0.985 0.003 250);
-  --foreground: oklch(0.18 0.03 270);
+  --background: oklch(0.985 0.008 300);
+  --foreground: oklch(0.22 0.05 285);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 270);
+  --card-foreground: oklch(0.22 0.05 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.03 270);
-  --secondary: oklch(0.94 0.01 270);
-  --secondary-foreground: oklch(0.18 0.03 270);
-  --muted: oklch(0.94 0.01 270);
-  --muted-foreground: oklch(0.40 0.02 270);
-  --border: oklch(0 0 0 / 10%);
-  --input: oklch(0 0 0 / 12%);
+  --popover-foreground: oklch(0.22 0.05 285);
+  --primary: oklch(0.55 0.20 290);
+  --primary-foreground: oklch(0.99 0.005 250);
+  --secondary: oklch(0.95 0.02 295);
+  --secondary-foreground: oklch(0.22 0.05 285);
+  --muted: oklch(0.95 0.02 295);
+  --muted-foreground: oklch(0.45 0.04 285);
+  --accent: oklch(0.92 0.05 300);
+  --accent-foreground: oklch(0.22 0.05 285);
+  --border: oklch(0.55 0.10 290 / 18%);
+  --input: oklch(0.55 0.10 290 / 22%);
+  --ring: oklch(0.55 0.20 290);
+
+  --brand-cta: oklch(0.55 0.22 285);
+  --gradient-hero: linear-gradient(120deg, oklch(0.78 0.10 280) 0%, oklch(0.82 0.09 295) 55%, oklch(0.88 0.07 320) 100%);
+  --gradient-header: linear-gradient(90deg, oklch(0.70 0.14 285) 0%, oklch(0.74 0.16 305) 100%);
 }
 .light body { background-color: var(--color-background); color: var(--color-foreground); }
 .light .section-dark { background: var(--color-background); }
-/* Flip white text/borders inside light content sections (keep hero/header gradients dark) */
+/* Flip white text/borders inside light content sections (keep hero/header gradients dark-ish) */
 .light .section-dark .text-white,
 .light .bg-card .text-white { color: var(--color-foreground) !important; }
 .light .section-dark .text-white\/80,
