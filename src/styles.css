@@ -104,35 +104,44 @@
 
 /* Light theme — soft lavender/cream palette that complements the purple brand */
 .light {
-  --background: oklch(0.985 0.008 300);
-  --foreground: oklch(0.22 0.05 285);
+  --background: oklch(0.985 0.012 305);
+  --foreground: oklch(0.22 0.06 285);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.05 285);
+  --card-foreground: oklch(0.22 0.06 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.05 285);
-  --primary: oklch(0.55 0.20 290);
+  --popover-foreground: oklch(0.22 0.06 285);
+  --primary: oklch(0.55 0.22 295);
   --primary-foreground: oklch(0.99 0.005 250);
-  --secondary: oklch(0.95 0.02 295);
-  --secondary-foreground: oklch(0.22 0.05 285);
-  --muted: oklch(0.95 0.02 295);
-  --muted-foreground: oklch(0.45 0.04 285);
-  --accent: oklch(0.92 0.05 300);
-  --accent-foreground: oklch(0.22 0.05 285);
-  --border: oklch(0.55 0.10 290 / 18%);
-  --input: oklch(0.55 0.10 290 / 22%);
-  --ring: oklch(0.55 0.20 290);
+  --secondary: oklch(0.95 0.03 300);
+  --secondary-foreground: oklch(0.22 0.06 285);
+  --muted: oklch(0.95 0.025 300);
+  --muted-foreground: oklch(0.42 0.05 285);
+  --accent: oklch(0.90 0.07 310);
+  --accent-foreground: oklch(0.22 0.06 285);
+  --border: oklch(0.55 0.12 290 / 20%);
+  --input: oklch(0.55 0.12 290 / 24%);
+  --ring: oklch(0.55 0.22 295);
 
-  --brand-cta: oklch(0.55 0.22 285);
-  --gradient-hero: linear-gradient(120deg, oklch(0.78 0.10 280) 0%, oklch(0.82 0.09 295) 55%, oklch(0.88 0.07 320) 100%);
-  --gradient-header: linear-gradient(90deg, oklch(0.70 0.14 285) 0%, oklch(0.74 0.16 305) 100%);
+  --brand-cta: oklch(0.58 0.24 295);
+  --gradient-hero: linear-gradient(120deg, oklch(0.94 0.05 290) 0%, oklch(0.92 0.07 305) 50%, oklch(0.95 0.06 325) 100%);
+  --gradient-header: linear-gradient(90deg, oklch(0.55 0.22 290) 0%, oklch(0.62 0.22 310) 100%);
 }
 .light body { background-color: var(--color-background); color: var(--color-foreground); }
 .light .section-dark { background: var(--color-background); }
-/* Flip white text/borders inside light content sections (keep hero/header gradients dark-ish) */
+/* Hero gradient is light in light mode — flip its inner text to dark */
+.light .bg-hero-gradient,
+.light .bg-hero-gradient h1,
+.light .bg-hero-gradient h2,
+.light .bg-hero-gradient p,
+.light .bg-hero-gradient span { color: var(--color-foreground); }
+/* Flip white text/borders inside light content sections (header stays purple → keep white text there) */
 .light .section-dark .text-white,
 .light .bg-card .text-white { color: var(--color-foreground) !important; }
 .light .section-dark .text-white\/80,
-.light .section-dark .text-white\/70 { color: var(--color-muted-foreground) !important; }
+.light .section-dark .text-white\/70,
+.light .bg-hero-gradient .text-white\/80,
+.light .bg-hero-gradient .text-white\/70 { color: var(--color-muted-foreground) !important; }
+.light .bg-hero-gradient .text-white { color: var(--color-foreground) !important; }
 .light .bg-card { background-color: var(--color-card) !important; box-shadow: 0 1px 3px oklch(0 0 0 / 0.08); }
 .light .section-dark .border-white\/10,
 .light .bg-card .border-white\/10 { border-color: oklch(0 0 0 / 10%) !important; }
