@@ -51,6 +51,36 @@ function ProjetoPage() {
         </div>
       </section>
 
+      <section className="section-dark">
+        <div className="mx-auto max-w-5xl px-6 py-20">
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <div className="flex justify-center">
+              <div className="rounded-2xl border border-white/15 bg-white p-5 shadow-xl">
+                <img
+                  src={qrAjuda}
+                  alt="QR Code para apoiar o projeto FabLibras"
+                  className="h-64 w-64 object-contain md:h-72 md:w-72"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div>
+              <h2 className="text-3xl text-white md:text-4xl">Ajude o projeto</h2>
+              <p className="mt-4 text-muted-foreground">
+                O FabLibras é uma iniciativa gratuita e sem fins lucrativos. Sua contribuição
+                nos ajuda a manter o curso ativo, produzir novas aulas e expandir o acesso ao
+                ensino de Libras para mais pessoas.
+              </p>
+              <p className="mt-3 text-muted-foreground">
+                Aponte a câmera do seu celular para o QR Code ao lado para apoiar o projeto.
+                Qualquer valor faz a diferença e contribui diretamente para uma sociedade mais
+                inclusiva. 💜
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[oklch(0.18_0.04_270)]">
         <div className="mx-auto max-w-4xl px-6 py-20">
           <div className="text-center">
