@@ -32,9 +32,19 @@ export function Footer() {
           </div>
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">ODS</h4>
-            <div className="mt-3 flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded bg-[#fd9d24] text-2xl font-bold text-white">11</div>
-              <p className="text-sm text-muted-foreground">Cidades e Comunidades Sustentáveis</p>
+            <div className="mt-3 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-[#c5192d] text-2xl font-bold text-white">4</div>
+                <p className="text-sm text-muted-foreground">Educação de Qualidade</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-[#dd1367] text-2xl font-bold text-white">10</div>
+                <p className="text-sm text-muted-foreground">Redução das Desigualdades</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-[#fd9d24] text-2xl font-bold text-white">11</div>
+                <p className="text-sm text-muted-foreground">Cidades e Comunidades Sustentáveis</p>
+              </div>
             </div>
           </div>
         </div>
