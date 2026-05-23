@@ -44,12 +44,14 @@ function Index() {
 
       {/* COMUNICAÇÃO INCLUSIVA banner */}
       <section className="bg-[#2563eb]">
-        <img
-          src={comunicacaoInclusiva}
-          alt="Comunicação Inclusiva"
-          className="mx-auto block h-auto w-full max-w-7xl"
-          loading="lazy"
-        />
+        <div className="mx-auto flex max-w-3xl items-center justify-center px-6 py-10 md:py-14">
+          <img
+            src={comunicacaoInclusiva}
+            alt="Comunicação Inclusiva"
+            className="block h-auto w-full max-w-xl"
+            loading="lazy"
+          />
+        </div>
       </section>
 
       {/* Curso card */}

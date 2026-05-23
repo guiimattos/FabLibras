@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/fablibras-logo.jpeg";
 
 const links = [
   { to: "/", label: "Início" },
@@ -16,10 +17,12 @@ export function Header() {
   return (
     <header className="bg-header-gradient sticky top-0 z-50 border-b border-white/10">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl">
-            Fab<span className="italic">Libras</span>
-          </span>
+        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)} aria-label="FabLibras — Início">
+          <img
+            src={logo}
+            alt="FabLibras"
+            className="h-10 w-auto rounded-md bg-white p-1 sm:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
