@@ -22,7 +22,7 @@ export function Header() {
           <img
             src={logo}
             alt="FabLibras"
-            className="h-16 w-auto sm:h-20"
+            className="h-14 w-auto sm:h-16"
           />
         </Link>
 
