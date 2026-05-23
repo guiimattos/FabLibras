@@ -141,7 +141,7 @@ function SobrePage() {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {equipe.map((p) => (
               <div key={p.nome} className="flex flex-col items-center text-center">
-                <Avatar nome={p.nome} />
+                <Avatar nome={p.nome} foto={p.foto} />
                 <p className="mt-4 font-bold text-white">{p.nome}</p>
                 <p className="text-sm text-muted-foreground">{p.papel}</p>
               </div>
