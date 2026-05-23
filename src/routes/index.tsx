@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import comunicacaoInclusiva from "@/assets/comunicacao-inclusiva.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,15 +41,36 @@ function Index() {
         </div>
       </section>
 
-      {/* COMUNICAÇÃO INCLUSIVA banner */}
-      <section className="bg-[#2563eb]">
-        <div className="mx-auto flex max-w-3xl items-center justify-center px-6 py-10 md:py-14">
-          <img
-            src={comunicacaoInclusiva}
-            alt="Comunicação Inclusiva"
-            className="block h-auto w-full max-w-xl"
-            loading="lazy"
-          />
+      {/* Por que aprender Libras */}
+      <section className="bg-header-gradient">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <h2 className="text-center text-3xl text-white md:text-4xl">Por que aprender Libras?</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-white/80">
+            Mais do que uma língua, Libras é uma ponte para a inclusão e o respeito à diversidade.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur">
+              <div className="text-3xl">🤝</div>
+              <h3 className="mt-3 text-xl text-white">Inclusão real</h3>
+              <p className="mt-2 text-sm text-white/80">
+                Conecte-se com mais de 10 milhões de brasileiros surdos e crie ambientes acessíveis.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur">
+              <div className="text-3xl">🧠</div>
+              <h3 className="mt-3 text-xl text-white">Nova forma de pensar</h3>
+              <p className="mt-2 text-sm text-white/80">
+                Desenvolva expressão corporal, memória visual e empatia ao aprender uma língua viso-espacial.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur">
+              <div className="text-3xl">🎓</div>
+              <h3 className="mt-3 text-xl text-white">Educação de qualidade</h3>
+              <p className="mt-2 text-sm text-white/80">
+                Conteúdo gratuito, em vídeo e alinhado às ODS 4 e 10 da ONU.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
