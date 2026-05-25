@@ -10,7 +10,7 @@ A plataforma busca conectar pessoas por meio da educação e da tecnologia, ofer
 
 ## 🌍 Objetivo do Projeto
 
-Promover inclusão social utilizando tecnologia e educação como ferramentas de transformação, tornando o aprendizado de LIBRAS mais acessível para todos.
+Promover inclusão social utilizando tecnologia e educação como ferramentas de transformação, tornando o aprendizado de LIBRAS mais acessível e atrativo para todos.
 
 ---
 
