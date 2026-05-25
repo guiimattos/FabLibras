@@ -56,5 +56,8 @@ O projeto busca seguir princípios de acessibilidade digital e inclusão social,
 
 ## 👨‍👩‍👧‍👦 Tecnologia, educação e inclusão conectando pessoas.
 
-### Para acessar site basta clicar na escrita abaixo: 👇
-### [Plataforma FabLibras](https://fablibras.com)
+<h3>
+  <a href="https://fablibras.com" target="_blank">
+  🌐 Acessar Plataforma FabLibras
+  </a>
+</h3>
