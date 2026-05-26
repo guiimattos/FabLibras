@@ -144,13 +144,28 @@ function SobrePage() {
             <p className="mt-3 text-muted-foreground">Pessoas apaixonadas por inclusão, tecnologia e educação — unidas por um propósito comum.</p>
           </div>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {equipe.map((p) => (
-              <div key={p.nome} className="flex flex-col items-center text-center">
-                <Avatar nome={p.nome} foto={p.foto} />
-                <p className="mt-4 font-bold text-white">{p.nome}</p>
-                <p className="text-sm text-muted-foreground">{p.papel}</p>
-              </div>
-            ))}
+            {equipe.map((p) => {
+              const SocialIcon = p.social.tipo === "linkedin" ? Linkedin : Instagram;
+              const label = p.social.tipo === "linkedin" ? "LinkedIn" : "Instagram";
+              return (
+                <div key={p.nome} className="flex flex-col items-center text-center">
+                  <Avatar nome={p.nome} foto={p.foto} />
+                  <div className="mt-4 flex items-center gap-2">
+                    <p className="font-bold text-white">{p.nome}</p>
+                    <a
+                      href={p.social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${label} de ${p.nome}`}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      <SocialIcon className="h-4 w-4" />
+                    </a>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{p.papel}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
