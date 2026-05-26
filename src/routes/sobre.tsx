@@ -102,11 +102,14 @@ function SobrePage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
-              { titulo: "Missão", texto: "Democratizar o acesso ao ensino de Libras por meio de uma plataforma digital acessível, inclusiva e de alta qualidade, alcançando surdos, ouvintes, educadores e famílias em todo o Brasil." },
-              { titulo: "Visão", texto: "Ser a maior e mais completa referência em educação em Libras da América Latina, contribuindo para uma sociedade verdadeiramente inclusiva onde a comunicação não tem barreiras." },
-              { titulo: "Propósito", texto: "Empoderar pessoas surdas e suas comunidades, garantindo que a Libras seja reconhecida, valorizada e ensinada com o respeito e o rigor que merece como língua oficial do Brasil." },
+              { titulo: "Missão", Icon: Target, texto: "Democratizar o acesso ao ensino de Libras por meio de uma plataforma digital acessível, inclusiva e de alta qualidade, alcançando surdos, ouvintes, educadores e famílias em todo o Brasil." },
+              { titulo: "Visão", Icon: Eye, texto: "Ser a maior e mais completa referência em educação em Libras da América Latina, contribuindo para uma sociedade verdadeiramente inclusiva onde a comunicação não tem barreiras." },
+              { titulo: "Propósito", Icon: Sparkles, texto: "Empoderar pessoas surdas e suas comunidades, garantindo que a Libras seja reconhecida, valorizada e ensinada com o respeito e o rigor que merece como língua oficial do Brasil." },
             ].map((c) => (
               <div key={c.titulo} className="rounded-xl border border-white/10 bg-card p-6">
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-brand-purple">
+                  <c.Icon className="h-6 w-6 text-white" aria-hidden="true" />
+                </div>
                 <h4 className="text-xl font-bold text-white">{c.titulo}</h4>
                 <p className="mt-3 text-sm text-muted-foreground">{c.texto}</p>
               </div>
