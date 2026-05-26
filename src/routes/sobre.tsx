@@ -157,9 +157,13 @@ function SobrePage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${label} de ${p.nome}`}
-                      className="text-muted-foreground transition-colors hover:text-primary"
+                      className="opacity-80 transition-opacity hover:opacity-100"
                     >
-                      <SocialIcon className="h-4 w-4" />
+                      <SocialIcon
+                        className={`h-4 w-4 ${
+                          p.social.tipo === "instagram" ? "text-pink-500" : "text-blue-500"
+                        }`}
+                      />
                     </a>
                   </div>
                   <p className="text-sm text-muted-foreground">{p.papel}</p>
