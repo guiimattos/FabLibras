@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import metodoFluenteImg from "@/assets/cursos/metodo-fluente.jpg";
+import aprendaLibrasImg from "@/assets/cursos/aprenda-libras.jpg";
+import librasCompletoImg from "@/assets/cursos/libras-completo.jpg";
 
 export const Route = createFileRoute("/curso-avancado")({
   head: () => ({
