@@ -29,14 +29,15 @@ const valores = [
 ];
 
 const equipe = [
-  { nome: "Ingrid Vieira", papel: "Intérprete de Libras", foto: ingridEquipeImg },
-  { nome: "Fernando Cunha", papel: "Desenvolvedor FrontEnd", foto: fernandoImg },
-  { nome: "Guilherme Mattos", papel: "UX/UI Designer", foto: guilhermeImg },
-  { nome: "Laura Cosmos", papel: "Planejamento das gravações", foto: lauraImg },
-  { nome: "Lívia Suniga", papel: "Gestora de Projetos", foto: liviaImg },
-  { nome: "Pedro Henrique", papel: "Suporte Geral", foto: pedroHenriqueImg },
-  { nome: "Pedro Luiz", papel: "Desenvolvedor FrontEnd", foto: pedroLuizImg },
+  { nome: "Ingrid Vieira", papel: "Intérprete de Libras", foto: ingridEquipeImg, social: { tipo: "instagram" as const, url: "https://www.instagram.com/ingridvieiracachos/" } },
+  { nome: "Fernando Cunha", papel: "Desenvolvedor FrontEnd", foto: fernandoImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/fernandocunhajunior/" } },
+  { nome: "Guilherme Mattos", papel: "UX/UI Designer", foto: guilhermeImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/guilhermerodriguesmattos/" } },
+  { nome: "Laura Cosmos", papel: "Planejamento das gravações", foto: lauraImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/laura-cosmos-b9968032a/" } },
+  { nome: "Lívia Suniga", papel: "Gestora de Projetos", foto: liviaImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/líviasuniga/" } },
+  { nome: "Pedro Henrique", papel: "Suporte Geral", foto: pedroHenriqueImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/phproenca/" } },
+  { nome: "Pedro Luiz", papel: "Desenvolvedor FrontEnd", foto: pedroLuizImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/pedro-luiz-dev/" } },
 ];
+
 
 function Avatar({ nome, foto }: { nome: string; foto: string }) {
   return (
