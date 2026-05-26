@@ -9,6 +9,8 @@ import lauraImg from "@/assets/equipe/laura.jpg";
 import liviaImg from "@/assets/equipe/livia.jpg";
 import pedroHenriqueImg from "@/assets/equipe/pedro-henrique.jpg";
 import pedroLuizImg from "@/assets/equipe/pedro-luiz.jpg";
+import facensLogo from "@/assets/parceiros/facens.jpg";
+import ingridLogo from "@/assets/parceiros/ingrid-vieira.jpg";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -184,14 +186,40 @@ function SobrePage() {
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-card p-6">
-              <h4 className="text-lg font-bold text-white">Centro Universitário UNIFACENS</h4>
-              <p className="mt-2 text-sm text-muted-foreground">Apoio pedagógico e instruções dos professores.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-card p-6">
-              <h4 className="text-lg font-bold text-white">Ingrid Vieira — Especialista em Cachos</h4>
-              <p className="mt-2 text-sm text-muted-foreground">Apoio sendo intérprete do curso de Libras e disponibilizando espaço para as gravações.</p>
-            </div>
+            <a
+              href="https://facens.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 rounded-xl border border-white/10 bg-card p-6 transition-colors hover:border-primary/50"
+            >
+              <img
+                src={facensLogo}
+                alt="Logo Centro Universitário Facens"
+                className="h-16 w-16 flex-shrink-0 rounded-lg object-cover"
+                loading="lazy"
+              />
+              <div>
+                <h4 className="text-lg font-bold text-white">Centro Universitário UNIFACENS</h4>
+                <p className="mt-2 text-sm text-muted-foreground">Apoio pedagógico e instruções dos professores.</p>
+              </div>
+            </a>
+            <a
+              href="https://maapp.com.br/ingridvieiracachos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 rounded-xl border border-white/10 bg-card p-6 transition-colors hover:border-primary/50"
+            >
+              <img
+                src={ingridLogo}
+                alt="Logo Ingrid Vieira Especialista em Cachos"
+                className="h-16 w-16 flex-shrink-0 rounded-lg object-cover"
+                loading="lazy"
+              />
+              <div>
+                <h4 className="text-lg font-bold text-white">Ingrid Vieira — Especialista em Cachos</h4>
+                <p className="mt-2 text-sm text-muted-foreground">Apoio sendo intérprete do curso de Libras e disponibilizando espaço para as gravações.</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
