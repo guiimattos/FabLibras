@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Linkedin, Instagram, Target, Eye, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import ingridImg from "@/assets/ingrid.jpeg";
 import ingridEquipeImg from "@/assets/equipe/ingrid.jpg";
