@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Linkedin, Instagram, Target, Eye, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import ingridImg from "@/assets/ingrid.jpeg";
 import ingridEquipeImg from "@/assets/equipe/ingrid.jpg";
@@ -29,14 +30,15 @@ const valores = [
 ];
 
 const equipe = [
-  { nome: "Ingrid Vieira", papel: "Intérprete de Libras", foto: ingridEquipeImg },
-  { nome: "Fernando Cunha", papel: "Desenvolvedor FrontEnd", foto: fernandoImg },
-  { nome: "Guilherme Mattos", papel: "UX/UI Designer", foto: guilhermeImg },
-  { nome: "Laura Cosmos", papel: "Planejamento das gravações", foto: lauraImg },
-  { nome: "Lívia Suniga", papel: "Gestora de Projetos", foto: liviaImg },
-  { nome: "Pedro Henrique", papel: "Suporte Geral", foto: pedroHenriqueImg },
-  { nome: "Pedro Luiz", papel: "Desenvolvedor FrontEnd", foto: pedroLuizImg },
+  { nome: "Ingrid Vieira", papel: "Intérprete de Libras", foto: ingridEquipeImg, social: { tipo: "instagram" as const, url: "https://www.instagram.com/ingridvieiracachos/" } },
+  { nome: "Fernando Cunha", papel: "Desenvolvedor FrontEnd", foto: fernandoImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/fernandocunhajunior/" } },
+  { nome: "Guilherme Mattos", papel: "UX/UI Designer", foto: guilhermeImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/guilhermerodriguesmattos/" } },
+  { nome: "Laura Cosmos", papel: "Planejamento das gravações", foto: lauraImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/laura-cosmos-b9968032a/" } },
+  { nome: "Lívia Suniga", papel: "Gestora de Projetos", foto: liviaImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/líviasuniga/" } },
+  { nome: "Pedro Henrique", papel: "Suporte Geral", foto: pedroHenriqueImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/phproenca/" } },
+  { nome: "Pedro Luiz", papel: "Desenvolvedor FrontEnd", foto: pedroLuizImg, social: { tipo: "linkedin" as const, url: "https://www.linkedin.com/in/pedro-luiz-dev/" } },
 ];
+
 
 function Avatar({ nome, foto }: { nome: string; foto: string }) {
   return (
@@ -100,11 +102,14 @@ function SobrePage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
-              { titulo: "Missão", texto: "Democratizar o acesso ao ensino de Libras por meio de uma plataforma digital acessível, inclusiva e de alta qualidade, alcançando surdos, ouvintes, educadores e famílias em todo o Brasil." },
-              { titulo: "Visão", texto: "Ser a maior e mais completa referência em educação em Libras da América Latina, contribuindo para uma sociedade verdadeiramente inclusiva onde a comunicação não tem barreiras." },
-              { titulo: "Propósito", texto: "Empoderar pessoas surdas e suas comunidades, garantindo que a Libras seja reconhecida, valorizada e ensinada com o respeito e o rigor que merece como língua oficial do Brasil." },
+              { titulo: "Missão", Icon: Target, texto: "Democratizar o acesso ao ensino de Libras por meio de uma plataforma digital acessível, inclusiva e de alta qualidade, alcançando surdos, ouvintes, educadores e famílias em todo o Brasil." },
+              { titulo: "Visão", Icon: Eye, texto: "Ser a maior e mais completa referência em educação em Libras da América Latina, contribuindo para uma sociedade verdadeiramente inclusiva onde a comunicação não tem barreiras." },
+              { titulo: "Propósito", Icon: Sparkles, texto: "Empoderar pessoas surdas e suas comunidades, garantindo que a Libras seja reconhecida, valorizada e ensinada com o respeito e o rigor que merece como língua oficial do Brasil." },
             ].map((c) => (
               <div key={c.titulo} className="rounded-xl border border-white/10 bg-card p-6">
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-brand-purple">
+                  <c.Icon className="h-6 w-6 text-white" aria-hidden="true" />
+                </div>
                 <h4 className="text-xl font-bold text-white">{c.titulo}</h4>
                 <p className="mt-3 text-sm text-muted-foreground">{c.texto}</p>
               </div>
@@ -139,13 +144,28 @@ function SobrePage() {
             <p className="mt-3 text-muted-foreground">Pessoas apaixonadas por inclusão, tecnologia e educação — unidas por um propósito comum.</p>
           </div>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {equipe.map((p) => (
-              <div key={p.nome} className="flex flex-col items-center text-center">
-                <Avatar nome={p.nome} foto={p.foto} />
-                <p className="mt-4 font-bold text-white">{p.nome}</p>
-                <p className="text-sm text-muted-foreground">{p.papel}</p>
-              </div>
-            ))}
+            {equipe.map((p) => {
+              const SocialIcon = p.social.tipo === "linkedin" ? Linkedin : Instagram;
+              const label = p.social.tipo === "linkedin" ? "LinkedIn" : "Instagram";
+              return (
+                <div key={p.nome} className="flex flex-col items-center text-center">
+                  <Avatar nome={p.nome} foto={p.foto} />
+                  <div className="mt-4 flex items-center gap-2">
+                    <p className="font-bold text-white">{p.nome}</p>
+                    <a
+                      href={p.social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${label} de ${p.nome}`}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      <SocialIcon className="h-4 w-4" />
+                    </a>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{p.papel}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

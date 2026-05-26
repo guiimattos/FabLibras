@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import metodoFluenteImg from "@/assets/cursos/metodo-fluente.jpg";
+import aprendaLibrasImg from "@/assets/cursos/aprenda-libras.jpg";
+import librasCompletoImg from "@/assets/cursos/libras-completo.jpg";
 
 export const Route = createFileRoute("/curso-avancado")({
   head: () => ({
@@ -19,18 +22,21 @@ const cursos = [
     descricao: "O Método Fluente em Libras® é o passo a passo para você sair do zero (ou do nível em que está) e se tornar fluente em Libras, poder se comunicar e entender os surdos com clareza. Absorva a Libras de forma natural, SEM ter que decorar sinais.",
     link: "https://chk.eduzz.com/252550",
     badge: "Fluente em Libras",
+    imagem: metodoFluenteImg,
   },
   {
     titulo: "APRENDA LIBRAS — Vídeos + Aulas ao vivo com Instrutor agendado",
     descricao: "Aprenda LIBRAS de um modo muito fácil. Ao final do curso, o aluno será capaz de realizar seu primeiro contato com o surdo, desenvolvendo cumprimentos e saudações iniciais em um diálogo — seja online ou na sua comunidade.",
     link: "https://chk.eduzz.com/319802?a=37374832",
     badge: "Aulas ao vivo",
+    imagem: aprendaLibrasImg,
   },
   {
     titulo: "Libras — Curso completo",
     descricao: "A Língua Brasileira de Sinais é a língua de sinais usada por surdos dos centros urbanos brasileiros e legalmente reconhecida como meio de comunicação e expressão.",
     link: "https://chk.eduzz.com/2137442?a=37374832",
     badge: "Libras",
+    imagem: librasCompletoImg,
   },
 ];
 
@@ -54,11 +60,13 @@ function CursoAvancadoPage() {
         <div className="mx-auto max-w-5xl space-y-6 px-6 py-20">
           {cursos.map((c) => (
             <div key={c.titulo} className="grid gap-6 rounded-2xl border border-white/10 bg-card p-6 md:grid-cols-[260px_1fr] md:p-8">
-              <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-gradient-to-br from-primary/30 to-brand-purple/30 p-6 md:aspect-auto">
-                <div className="text-center">
-                  <div className="text-5xl">✋</div>
-                  <p className="mt-2 text-sm font-bold uppercase tracking-wider text-white">{c.badge}</p>
-                </div>
+              <div className="overflow-hidden rounded-xl bg-gradient-to-br from-primary/30 to-brand-purple/30">
+                <img
+                  src={c.imagem}
+                  alt={`Capa do curso ${c.titulo}`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="text-xl font-bold text-white md:text-2xl">{c.titulo}</h3>
