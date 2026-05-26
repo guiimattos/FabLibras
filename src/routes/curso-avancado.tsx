@@ -60,11 +60,13 @@ function CursoAvancadoPage() {
         <div className="mx-auto max-w-5xl space-y-6 px-6 py-20">
           {cursos.map((c) => (
             <div key={c.titulo} className="grid gap-6 rounded-2xl border border-white/10 bg-card p-6 md:grid-cols-[260px_1fr] md:p-8">
-              <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-gradient-to-br from-primary/30 to-brand-purple/30 p-6 md:aspect-auto">
-                <div className="text-center">
-                  <div className="text-5xl">✋</div>
-                  <p className="mt-2 text-sm font-bold uppercase tracking-wider text-white">{c.badge}</p>
-                </div>
+              <div className="overflow-hidden rounded-xl bg-gradient-to-br from-primary/30 to-brand-purple/30">
+                <img
+                  src={c.imagem}
+                  alt={`Capa do curso ${c.titulo}`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="text-xl font-bold text-white md:text-2xl">{c.titulo}</h3>
