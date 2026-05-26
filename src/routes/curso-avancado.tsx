@@ -22,18 +22,21 @@ const cursos = [
     descricao: "O Método Fluente em Libras® é o passo a passo para você sair do zero (ou do nível em que está) e se tornar fluente em Libras, poder se comunicar e entender os surdos com clareza. Absorva a Libras de forma natural, SEM ter que decorar sinais.",
     link: "https://chk.eduzz.com/252550",
     badge: "Fluente em Libras",
+    imagem: metodoFluenteImg,
   },
   {
     titulo: "APRENDA LIBRAS — Vídeos + Aulas ao vivo com Instrutor agendado",
     descricao: "Aprenda LIBRAS de um modo muito fácil. Ao final do curso, o aluno será capaz de realizar seu primeiro contato com o surdo, desenvolvendo cumprimentos e saudações iniciais em um diálogo — seja online ou na sua comunidade.",
     link: "https://chk.eduzz.com/319802?a=37374832",
     badge: "Aulas ao vivo",
+    imagem: aprendaLibrasImg,
   },
   {
     titulo: "Libras — Curso completo",
     descricao: "A Língua Brasileira de Sinais é a língua de sinais usada por surdos dos centros urbanos brasileiros e legalmente reconhecida como meio de comunicação e expressão.",
     link: "https://chk.eduzz.com/2137442?a=37374832",
     badge: "Libras",
+    imagem: librasCompletoImg,
   },
 ];
 
