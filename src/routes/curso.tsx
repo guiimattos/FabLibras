@@ -16,7 +16,6 @@ export const Route = createFileRoute("/curso")({
 type Modulo = { icon: string; titulo: string; aulas: string[]; video?: string };
 
 const modulos: Modulo[] = [
-const modulos: Modulo[] = [
   { icon: "📚", titulo: "Módulo 1 — Introdução à Libras", aulas: ["O que é Libras?", "História da Libras", "Alfabeto Manual", "Números em Libras", "Cumprimentos Básicos"], video: "31-OGXVSgxg" },
   { icon: "😊", titulo: "Módulo 2 — Parâmetros + Alfabeto Manual", aulas: ["Expressões de Emoções", "Expressões Interrogativas", "Expressões Negativas", "Expressões de Intensidade", "Prática de Expressões"], video: "CdsYetUmGCM" },
   { icon: "🏠", titulo: "Módulo 3 — Números, tempo comprimentos e apresentações", aulas: ["Objetos do Lar", "Alimentos e Bebidas", "Roupas e Acessórios", "Meios de Transporte", "Tecnologia e Comunicação"], video: "oFo5lYAKz04" },
@@ -27,7 +26,6 @@ const modulos: Modulo[] = [
   { icon: "⏰", titulo: "Módulo 8 — Verbos, Negações e Direcionalidade", aulas: ["Dias da Semana", "Meses do Ano", "Horas e Minutos", "Estações do Ano", "Eventos e Datas Comemorativas"], video: "2du_fQezdCw" },
   { icon: "🏃", titulo: "Módulo 9 — Adjetivos e perguntas", aulas: ["Verbos do Cotidiano", "Verbos de Movimento", "Verbos de Comunicação", "Verbos de Sentimento", "Frases com Verbos"], video: "WqtHYYBQP9Q" },
   { icon: "💬", titulo: "Módulo 10 — Frases práticas e conversação", aulas: ["Diálogos do Dia a Dia", "Situações de Emergência", "No Médico e Farmácia", "Escola e Trabalho", "Revisão Geral e Certificado"], video: "iMXqS8F9wOE" },
-];
 ];
 
 function CursoPage() {
