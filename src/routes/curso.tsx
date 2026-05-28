@@ -16,16 +16,16 @@ export const Route = createFileRoute("/curso")({
 type Modulo = { icon: string; titulo: string; aulas: string[]; video?: string };
 
 const modulos: Modulo[] = [
-  { icon: "📚", titulo: "Módulo 1 — Introdução à Libras", aulas: ["O que é Libras?", "História da Libras", "Alfabeto Manual", "Números em Libras", "Cumprimentos Básicos"] },
-  { icon: "😊", titulo: "Módulo 2 — Parâmetros + Alfabeto Manual", aulas: ["Expressões de Emoções", "Expressões Interrogativas", "Expressões Negativas", "Expressões de Intensidade", "Prática de Expressões"], video: "bmb7e6QNEdk" },
-  { icon: "🏠", titulo: "Módulo 3 — Números, tempo comprimentos e apresentações", aulas: ["Objetos do Lar", "Alimentos e Bebidas", "Roupas e Acessórios", "Meios de Transporte", "Tecnologia e Comunicação"], video: "6Q2T980Nd_g" },
-  { icon: "👨‍👩‍👧", titulo: "Módulo 4 — Estrutura e pronomes", aulas: ["Membros da Família", "Profissões", "Características Físicas", "Relações Pessoais", "Pronomes"], video: "E6dn0gKfUuY" },
-  { icon: "🎨", titulo: "Módulo 5 — Familia cores e sentimentos", aulas: ["Cores Básicas", "Tamanhos e Formas", "Adjetivos Positivos", "Adjetivos Negativos", "Comparações"], video: "3VYNzSV9y0M" },
-  { icon: "🍽️", titulo: "Módulo 6 — Natureza, Animais, Alimentos e Bebidas", aulas: ["Frutas e Verduras", "Refeições do Dia", "Restaurante e Pedidos", "Sabores e Texturas", "Receitas Simples"], video: "i7_64pjB8Uk" },
-  { icon: "📍", titulo: "Módulo 7 — Profissões, lugares e transportes", aulas: ["Lugares da Cidade", "Pontos de Referência", "Como Pedir Direções", "Preposições de Lugar", "Mapa e Localização"], video: "S47gmcNm9gA" },
-  { icon: "⏰", titulo: "Módulo 8 — Verbos, Negações e Direcionalidade", aulas: ["Dias da Semana", "Meses do Ano", "Horas e Minutos", "Estações do Ano", "Eventos e Datas Comemorativas"] },
-  { icon: "🏃", titulo: "Módulo 9 — Adjetivos e perguntas", aulas: ["Verbos do Cotidiano", "Verbos de Movimento", "Verbos de Comunicação", "Verbos de Sentimento", "Frases com Verbos"], video: "uPkvr-euE9M" },
-  { icon: "💬", titulo: "Módulo 10 — Frases práticas e conversação", aulas: ["Diálogos do Dia a Dia", "Situações de Emergência", "No Médico e Farmácia", "Escola e Trabalho", "Revisão Geral e Certificado"], video: "jE9WcxbY8d0" },
+  { icon: "📚", titulo: "Módulo 1 — Introdução à Libras", aulas: ["O que é Libras?", "História da Libras", "Alfabeto Manual", "Números em Libras", "Cumprimentos Básicos"], video: "31-OGXVSgxg" },
+  { icon: "😊", titulo: "Módulo 2 — Parâmetros + Alfabeto Manual", aulas: ["Expressões de Emoções", "Expressões Interrogativas", "Expressões Negativas", "Expressões de Intensidade", "Prática de Expressões"], video: "CdsYetUmGCM" },
+  { icon: "🏠", titulo: "Módulo 3 — Números, tempo comprimentos e apresentações", aulas: ["Objetos do Lar", "Alimentos e Bebidas", "Roupas e Acessórios", "Meios de Transporte", "Tecnologia e Comunicação"], video: "oFo5lYAKz04" },
+  { icon: "👨‍👩‍👧", titulo: "Módulo 4 — Estrutura e pronomes", aulas: ["Membros da Família", "Profissões", "Características Físicas", "Relações Pessoais", "Pronomes"], video: "QieJXrsWm88" },
+  { icon: "🎨", titulo: "Módulo 5 — Familia cores e sentimentos", aulas: ["Cores Básicas", "Tamanhos e Formas", "Adjetivos Positivos", "Adjetivos Negativos", "Comparações"], video: "4EMwS1nsgxs" },
+  { icon: "🍽️", titulo: "Módulo 6 — Natureza, Animais, Alimentos e Bebidas", aulas: ["Frutas e Verduras", "Refeições do Dia", "Restaurante e Pedidos", "Sabores e Texturas", "Receitas Simples"], video: "SUeMUeH26Hc" },
+  { icon: "📍", titulo: "Módulo 7 — Profissões, lugares e transportes", aulas: ["Lugares da Cidade", "Pontos de Referência", "Como Pedir Direções", "Preposições de Lugar", "Mapa e Localização"], video: "VMxdllRYBDI" },
+  { icon: "⏰", titulo: "Módulo 8 — Verbos, Negações e Direcionalidade", aulas: ["Dias da Semana", "Meses do Ano", "Horas e Minutos", "Estações do Ano", "Eventos e Datas Comemorativas"], video: "2du_fQezdCw" },
+  { icon: "🏃", titulo: "Módulo 9 — Adjetivos e perguntas", aulas: ["Verbos do Cotidiano", "Verbos de Movimento", "Verbos de Comunicação", "Verbos de Sentimento", "Frases com Verbos"], video: "WqtHYYBQP9Q" },
+  { icon: "💬", titulo: "Módulo 10 — Frases práticas e conversação", aulas: ["Diálogos do Dia a Dia", "Situações de Emergência", "No Médico e Farmácia", "Escola e Trabalho", "Revisão Geral e Certificado"], video: "iMXqS8F9wOE" },
 ];
 
 function CursoPage() {
