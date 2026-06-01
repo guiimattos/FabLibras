@@ -85,7 +85,7 @@ function Index() {
             <p className="mt-3 text-muted-foreground">
               Aprenda os fundamentos da Língua Brasileira de Sinais e inicie sua jornada de comunicação inclusiva.
             </p>
-            <p className="mt-4 text-sm text-white/70">⏱ 1h30 de conteúdo</p>
+            
             <div className="mt-6">
               <Link to="/curso" className="btn-cta">Acessar Curso</Link>
             </div>
