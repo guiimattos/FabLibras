@@ -1,1 +1,71 @@
+# Revisão de Segurança Automática
+#
+# COMO INSTALAR (leva 2 minutos, não precisa saber programar):
+# 1. No seu repositório no GitHub, crie a pasta ".github/workflows" se não existir
+# 2. Coloque este arquivo dentro dela com o nome "security-review.yml"
+#    (caminho final: .github/workflows/security-review.yml)
+# 3. Pronto. A partir do próximo push, isso roda sozinho.
+#
+# O QUE ACONTECE:
+# - Toda vez que alguém enviar código novo (push) ou abrir um Pull Request,
+#   isso escaneia o projeto procurando segredos expostos e vulnerabilidades
+#   conhecidas nas dependências.
+# - Os resultados aparecem na aba "Actions" do repositório, e também como
+#   comentário automático no Pull Request (se for o caso).
+# - Não corrige nada sozinho — só avisa. Ninguém precisa lembrar de rodar
+#   nada manualmente.
+
+name: Revisão de Segurança
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      # Procura segredos/chaves expostas no código (gitleaks)
+      - name: Procurar segredos expostos
+        id: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Análise estática geral de vulnerabilidades comuns (semgrep)
+      - name: Análise estática de código
+        continue-on-error: true
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: auto
+
+      # Se o projeto tiver package.json, checa dependências vulneráveis
+      - name: Checar dependências (Node)
+        if: hashFiles('package.json') != ''
+        continue-on-error: true
+        run: npm audit --audit-level=high || true
+
+      # Se o projeto tiver requirements.txt, checa dependências Python
+      - name: Checar dependências (Python)
+        if: hashFiles('requirements.txt') != ''
+        continue-on-error: true
+        run: |
+          pip install pip-audit
+          pip-audit -r requirements.txt || true
+
+      - name: Resumo
+        if: always()
+        run: |
+          echo "### Revisão de segurança concluída" >> $GITHUB_STEP_SUMMARY
+          echo "Veja os resultados detalhados de cada etapa acima." >> $GITHUB_STEP_SUMMARY
+          echo "Nenhuma correção foi aplicada automaticamente — isso é só um relatório." >> $GITHUB_STEP_SUMMARY
 

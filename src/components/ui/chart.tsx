@@ -61,10 +61,18 @@ const ChartContainer = React.forwardRef<
 });
 ChartContainer.displayName = "Chart";
 
-const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
-  const colorConfig = Object.entries(config).filter(([, config]) => config.theme || config.color);
+// Restricts CSS identifiers/values injected into the raw <style> below, so a
+// crafted chart id/key/color can't break out of the RAWTEXT style content
+// (e.g. via "</style><img onerror=...>") when set through dangerouslySetInnerHTML.
+const SAFE_CSS_IDENT = /^[a-zA-Z0-9_-]+$/;
+const SAFE_CSS_COLOR_VALUE = /^[#a-zA-Z0-9(),.\-%\s]+$/;
 
-  if (!colorConfig.length) {
+const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
+  const colorConfig = Object.entries(config).filter(
+    ([key, config]) => (config.theme || config.color) && SAFE_CSS_IDENT.test(key),
+  );
+
+  if (!colorConfig.length || !SAFE_CSS_IDENT.test(id)) {
     return null;
   }
 
@@ -78,7 +86,7 @@ ${prefix} [data-chart=${id}] {
 ${colorConfig
   .map(([key, itemConfig]) => {
     const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-    return color ? `  --color-${key}: ${color};` : null;
+    return color && SAFE_CSS_COLOR_VALUE.test(color) ? `  --color-${key}: ${color};` : null;
   })
   .join("\n")}
 }
